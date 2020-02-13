@@ -29,4 +29,10 @@ public class CreateCalendarEventsPage {
     @FindBy (css = "[id^='time_selector_oro_calendar_event_form_start']")
     public WebElement startTime;
 
+    @FindBy (css = "[id^= 'recurrence-repeat-view']")
+    public WebElement repeatCheckBox;
+
+    @FindBy (css = "[id^= 'recurrence-repeats-view']")
+    public WebElement repeatSelectField;
+
 }

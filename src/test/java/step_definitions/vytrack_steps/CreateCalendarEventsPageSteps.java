@@ -1,6 +1,7 @@
 package step_definitions.vytrack_steps;
 
 import cucumber.api.java.en.Given;
+import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import org.junit.Assert;
 import pages.vytrack_pages.CreateCalendarEventsPage;
@@ -8,10 +9,13 @@ import pages.vytrack_pages.DashboardsPage;
 import pages.vytrack_pages.LoginPage;
 import utilities.Config;
 import utilities.Driver;
+import utilities.SeleniumUtils;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
+import java.util.List;
 
 public class CreateCalendarEventsPageSteps {
 
@@ -63,4 +67,24 @@ public class CreateCalendarEventsPageSteps {
         String actualTime = createPage.startTime.getAttribute("value");
         Assert.assertEquals(expectedTime, actualTime);
     }
+
+    ///
+
+    @When("the user clicks on the Repeat checkbox")
+    public void the_user_clicks_on_the_Repeat_checkbox() {
+        createPage.repeatCheckBox.click();
+    }
+
+    @Then("the user sees the Repeats select field with the following options: Daily, Weekly, Monthly, Yearly ")
+    public void the_user_sees_the_Repeats_select_field_with_the_following_options_Daily_Weekly_Monthly_Yearly() {
+
+        List<String> actualOptions = SeleniumUtils.getAllSelectOptions(createPage.repeatSelectField);
+        List <String> expectedOptions = new ArrayList<>();
+        expectedOptions.add("Daily"); expectedOptions.add("Weekly"); expectedOptions.add("Monthly");
+        expectedOptions.add("Yearly");
+
+        Assert.assertEquals(expectedOptions, actualOptions);
+
+    }
+
 }

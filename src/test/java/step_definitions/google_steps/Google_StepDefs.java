@@ -21,7 +21,7 @@ public class Google_StepDefs {
     public void user_should_see_title_contains_Google() {
         //2- compare the actual title vs expected title
         String actualTitle = Driver.getDriver().getTitle();
-        String expectedInTitle = "Google";
+        String expectedInTitle = "google";
 
         Assert.assertTrue("Title does not contain expected value!" , actualTitle.contains(expectedInTitle));
 
