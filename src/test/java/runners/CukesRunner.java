@@ -10,7 +10,7 @@ import org.junit.runner.RunWith;
         features = "src/test/resources/features/",
         glue = "step_definitions",
         dryRun = false,
-        tags = "@etsy, @etsy2"
+        tags = "@scenarioOutline"
 
 )
 public class CukesRunner {
