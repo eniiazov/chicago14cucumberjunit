@@ -33,7 +33,7 @@ Feature: Wikipedia search functionality verifications
     Examples: Test data for image header verification
       | searchValue  | expectedValue |
       | Steve Jobs   | Steve Jobs    |
-      | Bill G ates   | Bill Gates    |
+      | Bill Gates   | Bill Gates    |
       | Donald Trump | Donald Trump  |
       | Ricky Martin | Ricky Martin  |
       | Esen Niiazov | Esen Niiazov  |
