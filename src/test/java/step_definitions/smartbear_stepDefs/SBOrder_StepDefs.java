@@ -20,6 +20,7 @@ public class SBOrder_StepDefs {
 
     @Given("User is logged into SmartBear Tester account and on Order page")
     public void user_is_logged_into_SmartBear_Tester_account_and_on_Order_page() {
+
         Driver.getDriver().get("http://secure.smartbearsoftware.com/samples/testcomplete12/WebOrders/login.aspx");
 
         sbLoginPage.usernameInput.sendKeys("Tester");
