@@ -5,6 +5,7 @@ import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import pages.etsy_pages.Etsy_HomePage;
 import utilities.Config;
@@ -13,12 +14,12 @@ import utilities.Driver;
 public class EtsySearch_StepDefs {
 
     Etsy_HomePage etsy_homePage = new Etsy_HomePage();
+    WebDriver driver = Driver.getDriver();
 
     @Given("User is on Etsy home page")
     public void user_is_on_Etsy_home_page() {
-        Driver.getDriver().get(Config.getProperty("etsyURL"));
-        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 10);
-
+        driver.get(Config.getProperty("etsyURL"));
+        WebDriverWait wait = new WebDriverWait(driver, 10);
     }
 
     @When("User searches for wooden spoon")
