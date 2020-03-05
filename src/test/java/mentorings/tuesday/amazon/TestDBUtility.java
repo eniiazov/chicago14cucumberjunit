@@ -28,24 +28,19 @@ public class TestDBUtility {
 
         DBUtility.createConnection();
 
-        List<Map<Object, Object>> mydata = DBUtility.executeQuery("select * from employees");
+        List<Map<Object, Object>> mydata = DBUtility.executeQuery("select * from employees where employee_id = 175");
 
         DBUtility.close();
-
+        System.out.println("Data size: "+mydata.size());
+        System.out.println("Data size: "+mydata.get(0));
 //        for(Map<Object, Object> map: mydata){
-//            System.out.println(map);
+//
+////            System.out.println(map.get("EMPLOYEE_ID"));
+//            if(map.get("EMPLOYEE_ID").toString().equalsIgnoreCase("175")){
+//                if(map.get("SALARY").toString().equalsIgnoreCase("8800")){
+//                    System.out.println("ID: "+ map.get("EMPLOYEE_ID") + " Salary: "+map.get("SALARY") +" is verified!");
+//                }
+//            }
 //        }
-
-
-
-        for(Map<Object, Object> map: mydata){
-
-//            System.out.println(map.get("EMPLOYEE_ID"));
-            if(map.get("EMPLOYEE_ID").toString().equalsIgnoreCase("175")){
-                if(map.get("SALARY").toString().equalsIgnoreCase("8800")){
-                    System.out.println("ID: "+ map.get("EMPLOYEE_ID") + " Salary: "+map.get("SALARY") +" is verified!");
-                }
-            }
-        }
     }
 }
