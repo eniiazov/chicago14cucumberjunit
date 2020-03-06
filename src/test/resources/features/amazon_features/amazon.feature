@@ -12,4 +12,3 @@ Feature: Amazon feature
     Given teacher value
       | first_name | John |
       | last_name  | Wick |
-
