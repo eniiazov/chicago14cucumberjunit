@@ -12,9 +12,9 @@ import utilities.ExtentReport;
         features = "src/test/resources/features/",
         glue = "step_definitions",
         dryRun = false,
-        tags = "@dzone"
-
+        tags = "@miniRegression"
 )
+
 public class CukesRunner {
 
     @AfterClass
