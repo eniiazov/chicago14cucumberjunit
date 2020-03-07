@@ -49,3 +49,4 @@
 [INFO ] 2020-03-07 14:42:58.773 [main] Log - user on: https://dzone.com/articles/api-security-weekly-issue-71
 [INFO ] 2020-03-07 14:42:58.798 [main] Log - header 2 is taken: API Security Weekly: Issue #71
 [WARN ] 2020-03-07 14:42:58.799 [main] Log - Comparing two data
+[INFO ] 2020-03-07 16:23:48.960 [main] Log - Scenario start point: Google title verification
