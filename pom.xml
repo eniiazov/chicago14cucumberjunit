@@ -90,9 +90,9 @@
                         <include>**/CukesRunner.java</include>
                     </includes>
                     <testFailureIgnore>false</testFailureIgnore>
+
                 </configuration>
             </plugin>
-
         </plugins>
     </build>
 
