@@ -1,10 +1,12 @@
 package utilities;
 
+import java.util.Random;
+
 public class TestLogs {
 
     public static void main(String[] args) {
 
-        Driver.getDriver().get("http://www.google.com");
+        System.out.println(new Random().nextInt(50));
 
     }
 
