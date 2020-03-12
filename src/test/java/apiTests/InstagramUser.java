@@ -1,5 +1,6 @@
 package apiTests;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class InstagramUser {
@@ -14,6 +15,7 @@ public class InstagramUser {
         this.name = name;
         this.age = age;
         this.username = username;
+        this.posts = new ArrayList<>();
     }
 
 }

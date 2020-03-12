@@ -1,5 +1,7 @@
 package apiTests;
 
+import utilities.Config;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -10,6 +12,25 @@ public class Instagram {
     public Instagram(){
         users = new ArrayList<>();
     }
+
+
+    public void seeAllUsers(String secretKey){
+        if(Config.getProperty("apiKey").equals(secretKey)){
+            int counter = 1;
+            for(InstagramUser u: users){
+                System.out.println("User " + counter);
+                System.out.println("Name: " + u.name);
+                System.out.println("Username: " + u.username);
+                System.out.println("Age: " + u.age);
+                System.out.println();
+                counter++;
+            }
+        }
+        else{
+            System.out.println("Invalid API key! Try again");
+        }
+    }
+
 
     public void addUser(InstagramUser user){
         boolean found  = false;
