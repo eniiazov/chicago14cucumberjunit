@@ -1,4 +1,4 @@
-package apiTests;
+package fakeAPI;
 
 public class InstaTesting {
 

@@ -1,4 +1,4 @@
-package apiTests;
+package fakeAPI;
 
 import utilities.Config;
 
