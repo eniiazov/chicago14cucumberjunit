@@ -21,7 +21,6 @@ public class JacksonTest {
         subject.setName("Automation");
         subject.setYear(2020);
 
-        teacher.setSubject(subject);
 
         ObjectMapper objectMapper = new ObjectMapper();
         String teacherJson = objectMapper.writeValueAsString(teacher);

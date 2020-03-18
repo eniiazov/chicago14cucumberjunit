@@ -12,5 +12,9 @@ import java.util.List;
 public class ResponseBody {
 
     List<Student> students;
+    List<Teacher> teachers;
+
+    // JSON == ResponseBody
+
 
 }
