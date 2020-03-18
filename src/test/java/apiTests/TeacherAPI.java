@@ -1,8 +1,10 @@
 package apiTests;
 
 import ApiModels.ResponseBody;
+import ApiModels.Teacher;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.restassured.RestAssured;
+import io.restassured.http.ContentType;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import org.junit.Assert;
@@ -49,8 +51,39 @@ public class TeacherAPI {
                 continue;
             }
             System.out.println(email);
-
         }
+
+
+    }
+
+
+    @Test
+    public void createTeacherTest() throws Exception{
+        Teacher teacher = new Teacher();
+        teacher.setEmailAddress("jb2020@gmail.com");
+        teacher.setFirstName("James");
+        teacher.setLastName("Bond");
+        teacher.setJoinDate("01/02/2031");
+        teacher.setSalary(50000);
+        teacher.setBatch(14);
+        teacher.setBirthDate("01/01/1995");
+        teacher.setGender("Male");
+        teacher.setPassword("jb123");
+        teacher.setPhone("2342-52324");
+        teacher.setPremanentAddress("123 main street");
+        teacher.setSection("Whatever");
+        teacher.setSubject("Intro to Swimming");
+        teacher.setDepartment("Sports");
+
+        ObjectMapper objectMapper = new ObjectMapper();
+        String teacherJson = objectMapper.writeValueAsString(teacher);
+        System.out.println(teacherJson);
+
+        Response response = RestAssured.given().contentType(ContentType.JSON).
+                body(teacherJson).when().post(Config.getProperty("baseURL") + "/teacher/create");
+
+        System.out.println(response.statusCode());
+        System.out.println(response.asString());
 
 
     }
