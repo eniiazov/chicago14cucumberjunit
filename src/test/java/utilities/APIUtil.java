@@ -1,8 +1,11 @@
 package utilities;
 
+import ApiModels.RequestBody;
 import ApiModels.ResponseBody;
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.restassured.RestAssured;
+import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import org.junit.Assert;
 
@@ -34,5 +37,43 @@ public class APIUtil {
         return responseBody;
     }
 
+    public static void hitPOST(String resource, RequestBody body){
+        String uri = Config.getProperty("baseURL") + resource;
+
+        ObjectMapper objectMapper = new ObjectMapper();
+        String bodyJSON = "";
+        try {
+            bodyJSON = objectMapper.writeValueAsString(body);
+        } catch (JsonProcessingException e) {
+            e.printStackTrace();
+        }
+
+        Response response = RestAssured.given().contentType(ContentType.JSON).body(bodyJSON).when().post(uri);
+
+        System.out.println(response.asString());
+        Assert.assertEquals("GET API hit failed", 200, response.statusCode());
+
+        try{
+            responseBody = objectMapper.readValue(response.asString(), ResponseBody.class);
+        }
+        catch (Exception j){
+            j.printStackTrace();
+        }
+    }
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -9,6 +9,20 @@ import lombok.Data;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class RequestBody {
 
-
+    String premanentAddress;
+    String section;
+    String subject;
+    int batch;
+    String birthDate;
+    String department;
+    String gender;
+    String password;
+    String phone;
+    String firstName;
+    String lastName;
+    String emailAddress;
+    String joinDate;
+    int salary;
+    int teacherId;
 
 }
