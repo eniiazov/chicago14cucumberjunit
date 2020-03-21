@@ -67,7 +67,37 @@ public class UtilTesting {
 
         APIUtil.hitPOST("/teacher/create", teacher);
 
+    }
 
+    @Test
+    public void deleteTesting(){
+        String resource = "/teacher/delete/1928";
+        APIUtil.hitDELETE(resource);
+
+    }
+
+    @Test
+    public void updateTesting(){
+        String resource = "/teacher/update";
+
+        RequestBody requestBody = new RequestBody();
+        requestBody.setEmailAddress("new@gmail.com");
+        requestBody.setFirstName("Tim");
+        requestBody.setLastName("Ronaldo");
+        requestBody.setJoinDate("01/02/2003");
+        requestBody.setSalary(5004);
+        requestBody.setBatch(12);
+        requestBody.setBirthDate("01/01/1987");
+        requestBody.setGender("Male");
+        requestBody.setPassword("jb123");
+        requestBody.setPhone("2342-23423413");
+        requestBody.setPremanentAddress("32 main street");
+        requestBody.setSection("OK");
+        requestBody.setSubject("Coding");
+        requestBody.setDepartment("CS");
+        requestBody.setTeacherId(2708);
+
+        APIUtil.hitPUT(resource, requestBody);
     }
 
 }
