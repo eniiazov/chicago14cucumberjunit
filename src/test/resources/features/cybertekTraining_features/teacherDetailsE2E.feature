@@ -22,3 +22,23 @@ Feature: Teacher Details End to End for UI vs APIx
     Examples:
       | resource            | teacherName |
       | /teacher/name/Rahul | Rahul       |
+
+
+
+    Scenario: API vs DB end to end data validation
+
+      Given user gets teacher at "/teacher/2625"
+      And user connects to Cybertek Training DB
+      Then user gets data from DB with "some SQL query"
+      And user cross validates API with DB
+
+
+
+
+
+
+
+
+
+
+
