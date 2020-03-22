@@ -1,4 +1,4 @@
-package step_definitions.api_steps;
+package step_definitions.cybertekTraining_stepDefs;
 
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;

@@ -12,7 +12,7 @@ import utilities.ExtentReport;
         features = "src/test/resources/features/",
         glue = "step_definitions",
         dryRun = false,
-        tags = "@teacherDelete"
+        tags = "@e2e"
 )
 
 public class CukesRunner {
