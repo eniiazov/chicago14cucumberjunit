@@ -5,6 +5,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
 
+import java.util.List;
+
 public class CBTHomepage {
 
     public CBTHomepage(){
@@ -78,6 +80,12 @@ public class CBTHomepage {
     public WebElement addStudentLink;
 
     @FindBy(xpath = "(//input[@type='text'])[1]")
-    public WebElement teacherIDSeachInput;
+    public WebElement teacherIDSearchInput;
+
+    @FindBy(xpath = "(//input[@type='text'])[2]")
+    public WebElement teacherNameSearchInput;
+
+    @FindBy(xpath = "//div[@class='row staff-grid-row']//h4/a")
+    public List<WebElement> searchResultsName;
 
 }

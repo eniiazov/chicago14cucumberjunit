@@ -11,7 +11,10 @@ public class InstaTesting {
 
         instagram.addUser(user1);
         System.out.println();
-        instagram.seeAllUsers("Cyb32134");
+
+        String userToken = instagram.login("cbt1", "cbt2020");
+        System.out.println(userToken);
+        instagram.seeAllUsers(userToken);
 
 //        InstagramUser user2 = new InstagramUser("James Bond", 41, "jbcool");
 //        instagram.addUser(user2);

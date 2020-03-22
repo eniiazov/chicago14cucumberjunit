@@ -3,6 +3,8 @@ package apiTests;
 import ApiModels.RequestBody;
 import ApiModels.Student;
 import ApiModels.Teacher;
+import io.restassured.RestAssured;
+import io.restassured.response.Response;
 import org.junit.Assert;
 import org.junit.Test;
 import utilities.APIUtil;
@@ -73,7 +75,6 @@ public class UtilTesting {
     public void deleteTesting(){
         String resource = "/teacher/delete/1928";
         APIUtil.hitDELETE(resource);
-
     }
 
     @Test
@@ -98,6 +99,15 @@ public class UtilTesting {
         requestBody.setTeacherId(2708);
 
         APIUtil.hitPUT(resource, requestBody);
+    }
+
+    @Test
+    public void authentification(){
+        // Basic authentification
+        // username: cbt1 pass: admin2020
+        Response response = RestAssured.given().header("token", "admin2020").get("http://api.cybertektraining.com/teacher/all");
+        System.out.println(response.asString());
+
     }
 
 }

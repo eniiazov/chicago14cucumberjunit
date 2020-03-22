@@ -1,21 +1,33 @@
 package fakeAPI;
 
-import utilities.Config;
-
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 public class Instagram {
 
     List<InstagramUser> users;
+    String username = "cbt1";
+    String password = "Cbt2020";
+    String token = "123";
 
     public Instagram(){
         users = new ArrayList<>();
     }
 
+    public String login(String username, String password){
+        if(username.equalsIgnoreCase(this.username) && password.equalsIgnoreCase(this.password)){
+            Random random = new Random();
+            String token = random.nextInt(100000) + "dh";
+            this.token = token;
+            return token;
+        }
+        System.out.println("Login failed");
+        return "";
+    }
 
     public void seeAllUsers(String secretKey){
-        if(Config.getProperty("apiKey").equals(secretKey)){
+        if(this.token.equals(secretKey)){
             int counter = 1;
             for(InstagramUser u: users){
                 System.out.println("User " + counter);
