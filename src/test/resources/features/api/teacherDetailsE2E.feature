@@ -10,3 +10,4 @@ Feature: Teacher Details End to End for UI vs API
     Examples:
       | resource      | teacherID |
       | /teacher/2625 | 2625      |
+      | /teacher/2761 | 2761      |

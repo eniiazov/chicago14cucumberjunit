@@ -37,7 +37,7 @@ public class Hooks {
             ExtentReport.pass();
         }
 
-        //Driver.quitDriver();
+        Driver.quitDriver();
     }
 
 
