@@ -14,7 +14,7 @@ public class ResponseBody {
     List<Student> students;
     List<Teacher> teachers;
     String message;
-
+    int studentId;
     // JSON == ResponseBody
 
 

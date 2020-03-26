@@ -65,7 +65,7 @@ public class CBTHomepage {
     public WebElement teachersDropdown;
 
     @FindBy(xpath = "//div[@id='sidebar-menu']//span[.=' Students']")
-    public WebElement StudentsDropdown;
+    public WebElement studentsDropdown;
 
     @FindBy(xpath = "//div[@id='sidebar-menu']//a[@href='all-teachers.html']")
     public WebElement allTeachersLink;
@@ -75,6 +75,9 @@ public class CBTHomepage {
 
     @FindBy (xpath = "//div[@id='sidebar-menu']//a[@href='all-students.html']")
     public WebElement allStudentsLink;
+
+    @FindBy (xpath = "(//div[@class='form-group custom-mt-form-group']//input)[1]")
+    public WebElement searchStudentById;
 
     @FindBy (xpath = "//div[@id='sidebar-menu']//a[@href='add-student.html']")
     public WebElement addStudentLink;

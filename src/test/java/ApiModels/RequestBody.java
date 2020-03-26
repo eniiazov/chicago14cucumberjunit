@@ -25,4 +25,9 @@ public class RequestBody {
     int salary;
     int teacherId;
 
+    String major;
+    String admissionNo;
+    Contact contact;
+    Company company;
+
 }
